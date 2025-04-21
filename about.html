@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Sweet Delights Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ef9c28;
+      --secondary: #f8e5d6;
+      --accent: #e74c3c;
+      --dark: #5c3a21;
+      --light: #fff9f0;
+      --text: #3e2723;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* Hero Section */
+    .about-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://plus.unsplash.com/premium_photo-1681826507324-0b3c43928753?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding-top: 80px;
+    }
+    
+    .about-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .about-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    /* About Content */
+    .about-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .about-card {
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: var(--light);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    
+    .about-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .about-card i {
+      font-size: 40px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .about-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    .our-story {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+    
+    .our-story-text {
+      flex: 1;
+    }
+    
+    .our-story-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .our-story-image {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .our-story-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Team Section */
+    .team-section {
+      padding: 80px 0;
+      background-color: var(--secondary);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .team-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .team-image {
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .team-card:hover .team-image img {
+      transform: scale(1.05);
+    }
+    
+    .team-info {
+      padding: 20px;
+    }
+    
+    .team-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 5px;
+      color: var(--dark);
+    }
+    
+    .team-info p {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary);
+      bottom: 0;
+      left: 0;
+    }
+    
+    .footer-column p {
+      margin-bottom: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .footer-links {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+    
+    .footer-links:hover {
+      color: var(--primary);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 36px;
+      }
+      
+      .our-story {
+        flex-direction: column;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Sweet<span>Delights</span></div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-content">
+        <h1>Our Baking Story</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-card">
+          <i class="fas fa-heart"></i>
+          <h3>Made With Love</h3>
+          <p>Every pastry and bread is crafted with passion and attention to detail, just like homemade.</p>
+        </div>
+        
+        <div class="about-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Quality Ingredients</h3>
+          <p>We source only the finest organic ingredients from trusted local suppliers.</p>
+        </div>
+        
+        <div class="about-card">
+          <i class="fas fa-award"></i>
+          <h3>Family Recipe</h3>
+          <p>Our recipes have been perfected over three generations of master bakers.</p>
+        </div>
+      </div>
+      
+      <div class="our-story">
+        <div class="our-story-text">
+          <h3>Our Humble Beginnings</h3>
+          <p>Sweet Delights Bakery began in 1985 as a small family-owned shop in the heart of the city. What started as a passion project by grandmother Maria has grown into the beloved bakery we are today.</p>
+          <p>While we've expanded over the years, we've never compromised on the quality and care that went into those first loaves of bread. Every item in our bakery is still made by hand using traditional techniques combined with modern innovation.</p>
+          <p>We believe that great baking requires time, patience, and the best ingredients - never shortcuts. That's why we still rise before dawn to prepare our doughs and batters, just as Maria did all those years ago.</p>
+        </div>
+        <div class="our-story-image">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Old bakery photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Meet Our Bakers</h2>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-image">
+            <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Head Baker">
+          </div>
+          <div class="team-info">
+            <h3>Michael Johnson</h3>
+            <p>Head Baker</p>
+            <p>15 years of baking experience trained in Paris and Vienna</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-image">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" alt="Pastry Chef">
+          </div>
+          <div class="team-info">
+            <h3>Sarah Chen</h3>
+            <p>Pastry Chef</p>
+            <p>Specializes in French patisserie and gluten-free baking</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Bread Specialist">
+          </div>
+          <div class="team-info">
+            <h3>Carlos Mendez</h3>
+            <p>Bread Specialist</p>
+            <p>Expert in sourdough and artisan bread techniques</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Sweet Delights</h3>
+          <p>Artisan bakery dedicated to crafting delicious, high-quality baked goods using the finest ingredients since 1985.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <p><a href="index.html" class="footer-links">Home</a></p>
+          <p><a href="about.html" class="footer-links">About</a></p>
+          <p><a href="contact.html" class="footer-links">Contact</a></p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Visit Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Baker Street, London</p>
+          <p><i class="fas fa-phone"></i> +44 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> hello@sweetdelights.com</p>
+          <p><i class="fas fa-clock"></i> Mon-Sat: 7am-7pm</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Shaun Furtado. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
